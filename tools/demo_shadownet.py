@@ -8,6 +8,7 @@
 """
 Use shadow net to recognize the scene text
 """
+from __future__ import absolute_import
 import tensorflow as tf
 import os.path as ops
 import numpy as np
@@ -33,9 +34,9 @@ def init_args() -> argparse.Namespace:
     """
     parser = argparse.ArgumentParser()
     parser.add_argument('--image_path', type=str, help='Where you store the image',
-                        default='data/test_images/test_01.jpg')
+                        default='/Users/mvpzhao/tools/python-workspace/CRNN_Tensorflow/data/test_images/test_03.jpg')
     parser.add_argument('--weights_path', type=str, help='Where you store the weights',
-                        default='model/shadownet/shadownet_2017-09-29-19-16-33.ckpt-39999')
+                        default='/Users/mvpzhao/tools/python-workspace/CRNN_Tensorflow/model/shadownet/shadownet_2017-10-17-11-47-46.ckpt-199999')
     parser.add_argument('-c', '--num_classes', type=int, default=37,
                         help='Force number of character classes to this number. Set to 0 for auto.')
 

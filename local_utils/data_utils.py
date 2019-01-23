@@ -235,8 +235,8 @@ class TextFeatureIO(object):
     """
         Implement a crnn feature io manager
     """
-    def __init__(self, char_dict_path=ops.join(os.getcwd(), 'data/char_dict/char_dict.json'),
-                 ord_map_dict_path=ops.join(os.getcwd(), 'data/char_dict/ord_map.json')):
+    def __init__(self, char_dict_path=ops.join(os.getcwd(), '/Users/mvpzhao/tools/python-workspace/CRNN_Tensorflow/data/char_dict/char_dict.json'),
+                 ord_map_dict_path=ops.join(os.getcwd(), '/Users/mvpzhao/tools/python-workspace/CRNN_Tensorflow/data/char_dict/ord_map.json')):
         """
 
         """

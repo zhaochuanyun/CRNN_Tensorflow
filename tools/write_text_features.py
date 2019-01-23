@@ -76,8 +76,8 @@ def write_tfrecords(dataset: TextDataset, name: str, save_dir: str, char_maps_di
         char_dict_path=os.path.join(char_maps_dir, "char_dict.json")
         ord_map_dict_path=os.path.join(char_maps_dir, "ord_map.json")
     else:
-        char_dict_path = os.path.join("data/char_dict", "char_dict.json")
-        ord_map_dict_path = os.path.join("data/char_dict", "ord_map.json")
+        char_dict_path = os.path.join("/Users/mvpzhao/tools/python-workspace/CRNN_Tensorflow/data/char_dict", "char_dict.json")
+        ord_map_dict_path = os.path.join("/Users/mvpzhao/tools/python-workspace/CRNN_Tensorflow/data/char_dict", "ord_map.json")
 
     feature_io = TextFeatureIO(char_dict_path, ord_map_dict_path)
     feature_io.writer.write_features(tfrecords_path=tfrecord_path, labels=labels, images=images,
