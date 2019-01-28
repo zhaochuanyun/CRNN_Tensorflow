@@ -40,7 +40,6 @@ def init_args():
 
 def train_shadownet(dataset_dir, weights_path=None, num_threads=4):
     """
-
     :param dataset_dir:
     :param weights_path:
     :param num_threads: Number of threads to use in tf.train.shuffle_batch
@@ -48,8 +47,9 @@ def train_shadownet(dataset_dir, weights_path=None, num_threads=4):
     """
     # decode the tf records to get the training data
     decoder = data_utils.TextFeatureIO().reader
-    images, labels, imagenames = decoder.read_features(ops.join(dataset_dir, 'train_feature.tfrecords'),
-                                                       num_epochs=None)
+
+    images, labels, imagenames = decoder.read_features(ops.join(dataset_dir, 'train_feature.tfrecords'), num_epochs=None)
+
     inputdata, input_labels, input_imagenames = tf.train.shuffle_batch(
         tensors=[images, labels, imagenames], batch_size=config.cfg.TRAIN.BATCH_SIZE,
         capacity=1000 + 2*config.cfg.TRAIN.BATCH_SIZE, min_after_dequeue=100, num_threads=num_threads)
